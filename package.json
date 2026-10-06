@@ -1,0 +1,22 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vsmartok/gulp-starterkit.git"
+  },
+  "keywords": [],
+  "author": "Sergii Skorobagatko",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vsmartok/gulp-starterkit/issues"
+  },
+  "homepage": "https://github.com/vsmartok/gulp-starterkit#readme",
+  "devDependencies": {
+    "gulp": "^5.0.1"
+  }
+}
