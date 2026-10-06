@@ -24,8 +24,3 @@ export function serve(done) {
     done,
   );
 }
-
-export function reload(done) {
-  server.reload();
-  done();
-}
