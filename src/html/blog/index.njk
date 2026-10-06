@@ -1,6 +1,9 @@
 {% extends "_layouts/base.njk" %}
 
-{% block title %}Blog{% endblock %}
+{% set page = {
+  title: "Blog",
+  activeMenu: "blog"
+} %}
 
 {% block content %}
 <h1>Blog page</h1>

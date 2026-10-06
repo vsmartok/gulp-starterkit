@@ -1,6 +1,10 @@
 <header>
     <nav aria-label="Primary navigation">
-        <a href="/">Home</a>
-        <a href="/blog/">Blog</a>
+        <a href="/" {% if page.activeMenu == "home" %} class="is-active" aria-current="page" {% endif %}>
+            Home
+        </a>
+        <a href="/blog/" {% if page.activeMenu == "blog" %} class="is-active" aria-current="page" {% endif %}>
+            Blog
+        </a>
     </nav>
 </header>

@@ -1,6 +1,9 @@
 {% extends "_layouts/base.njk" %}
 
-{% block title %}Home{% endblock %}
+{% set page = {
+  title: "Home",
+  activeMenu: "home"
+} %}
 
 {% block content %}
 <h1>Home page</h1>
