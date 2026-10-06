@@ -1,11 +1,9 @@
 [
   {
-    "slug": "getting-started",
     "title": "Getting started",
     "excerpt": "How to start working with the starterkit."
   },
   {
-    "slug": "html-templates",
     "title": "HTML templates",
     "excerpt": "Layouts, reusable blocks and page data."
   }
