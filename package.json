@@ -4,7 +4,11 @@
   "description": "",
   "private": true,
   "type": "module",
-  "scripts": {},
+  "scripts": {
+    "dev": "gulp",
+    "start": "npm run dev",
+    "build": "gulp --production"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/vsmartok/gulp-starterkit.git"
