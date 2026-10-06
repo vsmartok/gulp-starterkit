@@ -21,6 +21,10 @@
   },
   "homepage": "https://github.com/vsmartok/gulp-starterkit#readme",
   "devDependencies": {
-    "gulp": "^5.0.1"
+    "browser-sync": "^3.0.4",
+    "del": "^8.0.1",
+    "gulp": "^5.0.1",
+    "gulp-beautify": "^3.0.0",
+    "gulp-nunjucks-render": "^2.2.3"
   }
 }

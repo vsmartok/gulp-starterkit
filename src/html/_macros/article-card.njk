@@ -1,0 +1,8 @@
+{% macro articleCard(article) %}
+<article class="article-card">
+    <h2 class="article-card__title">
+        <a href="/blog/single-article.html">{{ article.title }}</a>
+    </h2>
+    <p class="article-card__excerpt">{{ article.excerpt }}</p>
+</article>
+{% endmacro %}

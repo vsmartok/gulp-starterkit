@@ -1,0 +1,23 @@
+{% extends "_layouts/base.njk" %}
+
+{% set page = {
+  title: "Getting started",
+  activeMenu: "blog",
+  url: "/blog/single-article.html"
+} %}
+
+{% block content %}
+<article class="article">
+    <h1>{{ page.title }}</h1>
+
+    <div class="article__content">
+        <p>This starterkit compiles templates into HTML pages.</p>
+
+        <h2>First steps</h2>
+        <ol>
+            <li>Install dependencies.</li>
+            <li>Run the development build.</li>
+        </ol>
+    </div>
+</article>
+{% endblock %}

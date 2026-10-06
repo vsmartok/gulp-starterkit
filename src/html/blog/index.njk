@@ -1,0 +1,21 @@
+{% extends "_layouts/base.njk" %}
+
+{% from "_macros/article-card.njk" import articleCard %}
+
+{% set page = {
+  title: "Blog",
+  activeMenu: "blog",
+  url: "/blog/"
+} %}
+
+{% block content %}
+<h1>Blog</h1>
+
+<div class="articles">
+  {% for article in articles %}
+  {{ articleCard(article) }}
+  {% else %}
+  <p>No articles yet.</p>
+  {% endfor %}
+</div>
+{% endblock %}
