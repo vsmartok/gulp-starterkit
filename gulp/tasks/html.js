@@ -1,6 +1,7 @@
 import { pipeline } from "node:stream/promises";
 import gulp from "gulp";
 import nunjucksRender from "gulp-nunjucks-render";
+import beautify from "gulp-beautify";
 import { paths } from "../paths.js";
 import { loadData } from "../data.js";
 import { withErrorHandling } from "../with-error-handling.js";
@@ -18,6 +19,11 @@ async function buildHtml() {
         autoescape: true,
         throwOnUndefined: true,
       },
+    }),
+    beautify.html({
+      indent_size: 2,
+      max_preserve_newlines: 1,
+      end_with_newline: true,
     }),
     gulp.dest(paths.html.dest).resume(),
   );
