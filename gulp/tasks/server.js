@@ -7,7 +7,7 @@ export function serve(done) {
   server.init(
     {
       server: {
-        baseDir: paths.html.dest,
+        baseDir: paths.build,
       },
       port: 3000,
       listen: "0.0.0.0",
