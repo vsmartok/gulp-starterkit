@@ -2,6 +2,7 @@ import { glob } from "node:fs/promises";
 import { build } from "esbuild";
 import browserslistToEsbuild from "browserslist-to-esbuild";
 import { paths } from "../paths.js";
+import { config } from "../config.js";
 import { withErrorHandling } from "../with-error-handling.js";
 
 async function buildJs() {
@@ -19,6 +20,7 @@ async function buildJs() {
     platform: "browser",
     target: browserslistToEsbuild(),
     format: "iife",
+    sourcemap: config.isDev ? "linked" : false,
     minify: false,
     logLevel: "silent",
   });
