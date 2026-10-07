@@ -3,6 +3,8 @@ import { paths } from "../paths.js";
 import { html } from "./html.js";
 import { css } from "./css.js";
 import { js } from "./js.js";
+import { images } from "./images.js";
+import { video } from "./video.js";
 import { server } from "./server.js";
 
 async function rebuildHtml() {
@@ -29,9 +31,36 @@ async function rebuildJs() {
   }
 }
 
+async function rebuildImages() {
+  const success = await images();
+
+  if (success) {
+    server.reload();
+  }
+}
+
+async function rebuildVideo() {
+  const success = await video();
+
+  if (success) {
+    server.reload();
+  }
+}
+
 export function watchFiles() {
   gulp.watch(paths.css.watch, rebuildCss);
   gulp.watch(paths.js.watch, rebuildJs);
+
+  gulp.watch(
+    paths.images.map((group) => group.src),
+    { nocase: true },
+    rebuildImages,
+  );
+
+  gulp.watch(
+    paths.video.map((group) => group.src),
+    rebuildVideo,
+  );
 
   return gulp.watch(paths.html.watch, rebuildHtml);
 }
