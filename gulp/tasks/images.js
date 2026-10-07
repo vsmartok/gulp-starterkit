@@ -4,6 +4,7 @@ import { paths } from "../paths.js";
 import { withErrorHandling } from "../with-error-handling.js";
 import { checkImageNames } from "../check-image-names.js";
 import { createWebp } from "../create-webp.js";
+import { optimizeSvg } from "../optimize-svg.js";
 
 async function buildImages() {
   for (const group of paths.images) {
@@ -19,6 +20,7 @@ async function buildImages() {
           nocase: true,
         }),
         createWebp,
+        optimizeSvg,
         gulp.dest(group.dest).resume(),
       ),
     ),
