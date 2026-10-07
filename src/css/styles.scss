@@ -1,5 +1,6 @@
 @use "abstracts/variables";
+@use "base/fonts";
 
 body {
-    color: variables.$text-color;
+  color: variables.$text-color;
 }

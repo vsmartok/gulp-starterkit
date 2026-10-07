@@ -5,6 +5,7 @@ import { css } from "./css.js";
 import { js } from "./js.js";
 import { images } from "./images.js";
 import { video } from "./video.js";
+import { fonts } from "./fonts.js";
 import { server } from "./server.js";
 
 async function rebuildHtml() {
@@ -47,6 +48,14 @@ async function rebuildVideo() {
   }
 }
 
+async function rebuildFonts() {
+  const success = await fonts();
+
+  if (success) {
+    server.reload();
+  }
+}
+
 export function watchFiles() {
   gulp.watch(paths.css.watch, rebuildCss);
   gulp.watch(paths.js.watch, rebuildJs);
@@ -61,6 +70,8 @@ export function watchFiles() {
     paths.video.map((group) => group.src),
     rebuildVideo,
   );
+
+  gulp.watch(paths.fonts.src, rebuildFonts);
 
   return gulp.watch(paths.html.watch, rebuildHtml);
 }

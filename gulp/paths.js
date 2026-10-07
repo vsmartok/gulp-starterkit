@@ -52,4 +52,9 @@ export const paths = {
       dest: `${build}/uploads/videos`,
     },
   ],
+  fonts: {
+    src: "./src/fonts/**/*.{ttf,TTF,otf,OTF,woff,WOFF,woff2,WOFF2}",
+    base: "./src/fonts",
+    dest: `${build}/assets/fonts`,
+  },
 };
