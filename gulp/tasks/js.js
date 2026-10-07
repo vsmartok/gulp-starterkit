@@ -1,5 +1,6 @@
 import { glob } from "node:fs/promises";
 import { build } from "esbuild";
+import browserslistToEsbuild from "browserslist-to-esbuild";
 import { paths } from "../paths.js";
 import { withErrorHandling } from "../with-error-handling.js";
 
@@ -16,6 +17,7 @@ async function buildJs() {
     outdir: paths.js.dest,
     bundle: true,
     platform: "browser",
+    target: browserslistToEsbuild(),
     format: "iife",
     minify: false,
     logLevel: "silent",
