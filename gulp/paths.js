@@ -62,4 +62,9 @@ export const paths = {
     base: "./src/icons",
     dest: `${build}/assets/icons`,
   },
+  public: {
+    src: "./src/public/**/*",
+    base: "./src/public",
+    dest: build,
+  },
 };
