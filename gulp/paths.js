@@ -1,5 +1,7 @@
 const build = "./build";
 
+const imageFormats = "{jpg,jpeg,png,gif,svg,webp,avif}";
+
 export const paths = {
   build,
   html: {
@@ -25,4 +27,16 @@ export const paths = {
     dest: `${build}/assets/js`,
     watch: "./src/js/**/*.js",
   },
+  images: [
+    {
+      src: `./src/img/**/*.${imageFormats}`,
+      base: "./src/img",
+      dest: `${build}/assets/img`,
+    },
+    {
+      src: `./src/uploads/images/**/*.${imageFormats}`,
+      base: "./src/uploads/images",
+      dest: `${build}/uploads/images`,
+    },
+  ],
 };
