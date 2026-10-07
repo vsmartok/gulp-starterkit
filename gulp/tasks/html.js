@@ -3,6 +3,7 @@ import gulp from "gulp";
 import nunjucksRender from "gulp-nunjucks-render";
 import beautify from "gulp-beautify";
 import { paths } from "../paths.js";
+import { config } from "../config.js";
 import { loadData } from "../data.js";
 import { withErrorHandling } from "../with-error-handling.js";
 
@@ -14,7 +15,12 @@ async function buildHtml() {
     nunjucksRender({
       path: paths.html.base,
       ext: ".html",
-      data,
+      data: {
+        ...data,
+        build: {
+          isProd: config.isProd,
+        },
+      },
       envOptions: {
         autoescape: true,
         throwOnUndefined: true,
