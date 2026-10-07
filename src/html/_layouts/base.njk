@@ -17,7 +17,9 @@
 
   {% include "_parts/footer.njk" %}
 
-  <script src="/assets/js/app.js" defer></script>
+  <script src="/assets/js/app{% if build.isProd %}.min{% endif %}.js" defer></script>
+
+  {% block pageScripts %}{% endblock %}
 </body>
 
 </html>
