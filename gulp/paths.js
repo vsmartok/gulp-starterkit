@@ -19,4 +19,10 @@ export const paths = {
     dest: `${build}/assets/css`,
     watch: "./src/css/**/*.{sass,scss,css}",
   },
+  js: {
+    src: "./src/js/*.js",
+    base: "./src/js",
+    dest: `${build}/assets/js`,
+    watch: "./src/js/**/*.js",
+  },
 };

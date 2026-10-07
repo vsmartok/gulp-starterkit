@@ -25,6 +25,7 @@
     "browser-sync": "^3.0.4",
     "cssnano": "^9.3.2",
     "del": "^8.0.1",
+    "esbuild": "^0.28.2",
     "gulp": "^5.0.1",
     "gulp-beautify": "^3.0.0",
     "gulp-nunjucks-render": "^2.2.3",
