@@ -40,4 +40,16 @@ export const paths = {
       dest: `${build}/uploads/images`,
     },
   ],
+  video: [
+    {
+      src: "./src/video/**/*",
+      base: "./src/video",
+      dest: `${build}/assets/video`,
+    },
+    {
+      src: "./src/uploads/videos/**/*",
+      base: "./src/uploads/videos",
+      dest: `${build}/uploads/videos`,
+    },
+  ],
 };
