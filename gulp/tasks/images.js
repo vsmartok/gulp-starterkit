@@ -3,6 +3,7 @@ import gulp from "gulp";
 import { paths } from "../paths.js";
 import { withErrorHandling } from "../with-error-handling.js";
 import { checkImageNames } from "../check-image-names.js";
+import { createWebp } from "../create-webp.js";
 
 async function buildImages() {
   for (const group of paths.images) {
@@ -17,6 +18,7 @@ async function buildImages() {
           encoding: false,
           nocase: true,
         }),
+        createWebp,
         gulp.dest(group.dest).resume(),
       ),
     ),
