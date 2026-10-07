@@ -1,6 +1,7 @@
 const build = "./build";
 
-const imageFormats = "{jpg,jpeg,png,gif,svg,webp,avif}";
+const imageFormats =
+  "{jpg,JPG,jpeg,JPEG,png,PNG,gif,GIF,svg,SVG,webp,WEBP,avif,AVIF}";
 
 export const paths = {
   build,
