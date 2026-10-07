@@ -57,4 +57,9 @@ export const paths = {
     base: "./src/fonts",
     dest: `${build}/assets/fonts`,
   },
+  icons: {
+    src: "./src/icons/**/*.{svg,SVG}",
+    base: "./src/icons",
+    dest: `${build}/assets/icons`,
+  },
 };
