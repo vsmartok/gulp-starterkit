@@ -2,6 +2,8 @@ import { pipeline } from "node:stream/promises";
 import gulp from "gulp";
 import * as dartSass from "sass";
 import gulpSass from "gulp-sass";
+import postcss from "gulp-postcss";
+import autoprefixer from "autoprefixer";
 import { paths } from "../paths.js";
 import { config } from "../config.js";
 import { withErrorHandling } from "../with-error-handling.js";
@@ -12,6 +14,7 @@ async function buildCss() {
   await pipeline(
     gulp.src(paths.css.src, { base: paths.css.base, sourcemaps: config.isDev }),
     sass.sync({ style: "expanded" }),
+    postcss([autoprefixer()]),
     gulp
       .dest(paths.css.dest, {
         sourcemaps: config.isDev ? "." : false,
