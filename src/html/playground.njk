@@ -1,0 +1,278 @@
+{% extends "_layouts/base.njk" %}
+
+{% set page = {
+  title: "HTML elements playground",
+  activeMenu: "",
+  url: "/playground.html"
+} %}
+
+{% block content %}
+<header>
+  <h1>HTML elements playground</h1>
+  <p>A test page for the reset and base styles. Use Tab to check focus, resize the window, and compare the page before
+    and after enabling the reset.</p>
+  <nav aria-label="Playground sections">
+    <ul>
+      <li><a href="#typography">Typography</a></li>
+      <li><a href="#lists">Lists</a></li>
+      <li><a href="#tables">Tables</a></li>
+      <li><a href="#forms">Forms</a></li>
+      <li><a href="#media">Media</a></li>
+      <li><a href="#disclosure">Disclosure</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section id="typography" class="content" aria-labelledby="typography-title">
+  <h2 id="typography-title">Typography and text</h2>
+  <h3>Heading level 3</h3>
+  <h4>Heading level 4</h4>
+  <h5>Heading level 5</h5>
+  <h6>Heading level 6</h6>
+
+  <p>This paragraph contains <strong>important text</strong>, <em>emphasis</em>, <b>bold text</b>, <i>an alternative
+      voice</i>, <u>an annotation</u>, <s>outdated information</s>, and <mark>highlighted text</mark>.</p>
+  <p><small>Small print: this page uses fictional information for testing.</small></p>
+  <p>The price changed from <del>$120</del> to <ins>$95</ins>. Water is H<sub>2</sub>O, and 5<sup>2</sup> equals 25.</p>
+  <p><abbr title="HyperText Markup Language">HTML</abbr> describes structure. The sample was published on <time
+      datetime="2026-10-08">October 8, 2026</time>.</p>
+  <p>An inline quotation: <q>Keep the structure simple.</q> Reference: <cite>A fictional design handbook</cite>.</p>
+  <p><a href="#forms">A standard link to the form section</a>. <a href="/blog/">An internal link to the blog</a>.</p>
+  <p>First line of an address.<br>Second line with an explicit line break.</p>
+  <p>Long content: extraordinarilylongwordwithoutspacesfortestingoverflowandwrapping. A break opportunity:
+    starterkit<wbr>documentation<wbr>playground.</p>
+
+  <blockquote>
+    <p>A block quotation should remain readable and distinct from the surrounding content.</p>
+    <footer>— Alex Example, <cite>Notes on layouts</cite></footer>
+  </blockquote>
+
+  <p>Use <code>npm start</code> to start development. Press <kbd>Tab</kbd> to move focus. Example output: <samp>Build
+      complete</samp>. In the expression <var>x</var> + 5, <var>x</var> is a variable.</p>
+  <pre><code>function greet(name) {
+  return `Hello, ${name}!`;
+}
+
+console.log(greet("Starterkit"));</code></pre>
+  <hr>
+  <address>
+    Example Studio<br>
+    12 Sample Street, Example City<br>
+    <a href="mailto:hello@example.com">hello@example.com</a>
+  </address>
+</section>
+
+<section id="lists" class="content" aria-labelledby="lists-title">
+  <h2 id="lists-title">Lists</h2>
+  <h3>Unordered list</h3>
+  <ul>
+    <li>HTML templates</li>
+    <li>Stylesheets
+      <ul>
+        <li>Reset and base styles</li>
+        <li>Components and utilities</li>
+      </ul>
+    </li>
+    <li>JavaScript modules</li>
+  </ul>
+  <h3>Ordered list</h3>
+  <ol>
+    <li>Install dependencies.</li>
+    <li>Start development.</li>
+    <li>Build the finished template.</li>
+  </ol>
+  <h3>Definition list</h3>
+  <dl>
+    <dt>Reset</dt>
+    <dd>A small set of rules that normalizes selected browser defaults.</dd>
+    <dt>Component</dt>
+    <dd>A reusable interface element with its own styles and behavior.</dd>
+    <dt>Container</dt>
+    <dd>A wrapper that controls content width and horizontal spacing.</dd>
+  </dl>
+</section>
+
+<section id="tables" class="content" aria-labelledby="tables-title">
+  <h2 id="tables-title">Tables</h2>
+  <table>
+    <caption>Fictional project estimates</caption>
+    <thead>
+      <tr>
+        <th scope="col">Task</th>
+        <th scope="col">Status</th>
+        <th scope="col">Hours</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">Landing page</th>
+        <td>In progress</td>
+        <td>12</td>
+      </tr>
+      <tr>
+        <th scope="row">Contact form</th>
+        <td>Ready</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <th scope="row">Product cards</th>
+        <td>Planned</td>
+        <td>8</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <th scope="row" colspan="2">Total</th>
+        <td>24</td>
+      </tr>
+    </tfoot>
+  </table>
+</section>
+
+<section id="forms" aria-labelledby="forms-title">
+  <h2 id="forms-title">Forms and controls</h2>
+  <p>This demonstration form has no backend. Submit uses native browser validation and navigates to this page with query
+    parameters.</p>
+  <form action="/" method="get">
+    <fieldset>
+      <legend>Contact information</legend>
+      <p><label for="demo-name">Name (required)</label><br><input id="demo-name" name="name" type="text"
+          autocomplete="name" placeholder="Alex Example" required></p>
+      <p><label for="demo-email">Email</label><br><input id="demo-email" name="email" type="email" autocomplete="email"
+          placeholder="alex@example.com"></p>
+      <p><label for="demo-phone">Phone</label><br><input id="demo-phone" name="phone" type="tel" autocomplete="tel"
+          placeholder="+1 555 0100"></p>
+      <p><label for="demo-url">Website</label><br><input id="demo-url" name="website" type="url"
+          placeholder="https://example.com"></p>
+      <p><label for="demo-search">Search</label><br><input id="demo-search" name="search" type="search"
+          placeholder="Search components"></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Selections and values</legend>
+      <p><label for="demo-number">Quantity</label><br><input id="demo-number" name="quantity" type="number" min="1"
+          max="20" value="3"></p>
+      <p><label for="demo-date">Date</label><br><input id="demo-date" name="date" type="date"></p>
+      <p><label for="demo-time">Time</label><br><input id="demo-time" name="time" type="time"></p>
+      <p><label for="demo-color">Color</label><br><input id="demo-color" name="color" type="color" value="#336699"></p>
+      <p><label for="demo-range">Range: 0–100</label><br><input id="demo-range" name="range" type="range" min="0"
+          max="100" value="50"></p>
+      <p>
+        <label for="demo-select">Project type</label><br>
+        <select id="demo-select" name="project">
+          <option value="">Select an option</option>
+          <optgroup label="Websites">
+            <option value="landing">Landing page</option>
+            <option value="multipage">Multi-page website</option>
+          </optgroup>
+          <optgroup label="Components">
+            <option value="form">Form</option>
+            <option value="navigation">Navigation</option>
+          </optgroup>
+        </select>
+      </p>
+      <p><label for="demo-suggestion">Suggested component</label><br><input id="demo-suggestion" name="component"
+          list="demo-components"><datalist id="demo-components">
+          <option value="Modal">
+          <option value="Accordion">
+          <option value="Navigation">
+        </datalist></p>
+      <p><label for="demo-message">Message</label><br><textarea id="demo-message" name="message" rows="4" cols="40"
+          placeholder="Describe your project"></textarea></p>
+      <p><label><input name="newsletter" type="checkbox" value="yes" checked> Subscribe to updates</label></p>
+      <p><label><input name="terms" type="checkbox" value="accepted"> Accept the demo terms</label></p>
+      <p><label><input name="delivery" type="radio" value="standard" checked> Standard delivery</label></p>
+      <p><label><input name="delivery" type="radio" value="express"> Express delivery</label></p>
+    </fieldset>
+
+    <fieldset>
+      <legend>Control states</legend>
+      <p><label for="demo-readonly">Read-only input</label><br><input id="demo-readonly" name="reference" type="text"
+          value="ORDER-1234" readonly></p>
+      <p><label for="demo-disabled">Disabled input</label><br><input id="demo-disabled" type="text" value="Unavailable"
+          disabled></p>
+      <p><label><input type="checkbox" checked disabled> Disabled checkbox</label></p>
+      <p><label for="demo-disabled-select">Disabled select</label><br><select id="demo-disabled-select" disabled>
+          <option>Unavailable</option>
+        </select></p>
+      <p><label for="demo-file">File chooser (display test only)</label><br><input id="demo-file" type="file"></p>
+    </fieldset>
+
+    <p>
+      <button type="submit">Submit demo</button>
+      <button type="reset">Reset form</button>
+      <button type="button">Regular button</button>
+      <button type="button" disabled>Disabled button</button>
+    </p>
+  </form>
+
+  <p><label for="demo-progress">Build progress</label> <progress id="demo-progress" max="100" value="65">65%</progress>
+  </p>
+  <p><label for="demo-meter">Storage usage</label> <meter id="demo-meter" min="0" max="100" low="20" high="80"
+      optimum="30" value="45">45%</meter></p>
+  <p>Calculated value: <output>42</output></p>
+</section>
+
+<section id="media" aria-labelledby="media-title">
+  <h2 id="media-title">Images and media</h2>
+  <p>The image is embedded in this page, so no local asset or external request is required.</p>
+  <figure>
+    <picture>
+      <img
+        src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='480' height='240' viewBox='0 0 480 240'%3E%3Crect width='480' height='240' fill='%23dbeafe'/%3E%3Ccircle cx='100' cy='120' r='60' fill='%233b82f6'/%3E%3Ctext x='190' y='130' font-family='sans-serif' font-size='24' fill='%231e3a8a'%3ETest image%3C/text%3E%3C/svg%3E"
+        width="480" height="240" alt="A blue circle next to the words Test image">
+    </picture>
+    <figcaption>A figure caption. Compare its spacing with the image and surrounding text.</figcaption>
+  </figure>
+  <h3>Inline SVG</h3>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="48" height="48" fill="none" stroke="currentColor"
+    stroke-width="2" role="img" aria-labelledby="demo-svg-title">
+    <title id="demo-svg-title">Plus icon</title>
+    <path d="M12 5v14M5 12h14" />
+  </svg>
+  <h3>Video controls</h3>
+  <p>No video source is included; this element demonstrates the native control area.</p>
+  <video controls width="480" height="270" preload="none" aria-label="Demo video player"></video>
+  <h3>Audio controls</h3>
+  <p>No audio source is included.</p>
+  <audio controls preload="none" aria-label="Demo audio player"></audio>
+</section>
+
+<section id="disclosure" aria-labelledby="disclosure-title">
+  <h2 id="disclosure-title">Disclosure and hidden content</h2>
+  <details>
+    <summary>Open this disclosure</summary>
+    <p>This content uses native details and summary behavior. Test clicking the summary and activating it with the
+      keyboard.</p>
+    <ul>
+      <li>First nested item</li>
+      <li>Second nested item</li>
+    </ul>
+  </details>
+  <details open>
+    <summary>Initially expanded disclosure</summary>
+    <p>This panel starts open and can be collapsed.</p>
+  </details>
+  <p>The next paragraph has the hidden attribute and should not be visible.</p>
+  <p hidden>Ordinary hidden test content.</p>
+  <p>In supporting browsers, searching for “Findable demo paragraph” can reveal the following hidden-until-found
+    content.</p>
+  <div hidden="until-found">Findable demo paragraph: revealed by browser search or fragment navigation in supporting
+    browsers.</div>
+</section>
+
+<article>
+  <header>
+    <h2>A sample article</h2>
+    <p>By Alex Example · <time datetime="2026-10-08">October 8, 2026</time></p>
+  </header>
+  <p>A short article demonstrates sectioning elements without component classes or additional presentation styles.</p>
+  <aside>
+    <h3>Related note</h3>
+    <p>This aside contains supplementary information.</p>
+  </aside>
+  <footer>
+    <p>End of the sample article.</p>
+  </footer>
+</article>
+{% endblock %}
