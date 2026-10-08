@@ -1,13 +1,6 @@
 // Features
 $enable-dark-mode: true !default;
 
-// Typography
-$font-family-base: system-ui, sans-serif !default;
-$font-size-base: 1rem !default;
-$font-weight-base: 400 !default;
-$font-style-base: normal !default;
-$line-height-base: 1.5 !default;
-
 // Light theme
 $body-color: #222 !default;
 $body-bg: #fff !default;
@@ -17,3 +10,25 @@ $link-color: #005fcc !default;
 $body-color-dark: #eee !default;
 $body-bg-dark: #181818 !default;
 $link-color-dark: #8ab4ff !default;
+
+// Typography
+$font-family-base: system-ui, sans-serif !default;
+$font-size-base: 1rem !default;
+$font-weight-base: 400 !default;
+$font-style-base: normal !default;
+$line-height-base: 1.5 !default;
+
+// Headings
+$headings-font-family: inherit !default;
+$headings-font-style: normal !default;
+$headings-font-weight: 700 !default;
+$headings-line-height: 1.2 !default;
+$headings-color: inherit !default;
+
+// Initial heading scale
+$h1-font-size: 2rem !default;
+$h2-font-size: 1.75rem !default;
+$h3-font-size: 1.5rem !default;
+$h4-font-size: 1.25rem !default;
+$h5-font-size: 1.125rem !default;
+$h6-font-size: 1rem !default;
