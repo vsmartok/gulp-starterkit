@@ -285,6 +285,88 @@ console.log(greet("Starterkit"));</code></pre>
   </button>
 </section>
 
+<section aria-labelledby="form-fields-title">
+  <h2 id="form-fields-title">Form fields</h2>
+
+  <div class="form-field">
+    <label class="form-field__label" for="contact-email">Email</label>
+
+    <input
+      class="form-field__control"
+      id="contact-email"
+      name="email"
+      type="email"
+      placeholder="Enter your email address"
+      autocomplete="email"
+      aria-describedby="contact-email-hint"
+    >
+
+    <p class="form-field__hint" id="contact-email-hint">
+      We will use this address to reply.
+    </p>
+  </div>
+
+  <div class="form-field">
+    <label class="form-field__label" for="demo-message">Message</label>
+    <textarea
+      class="form-field__control"
+      id="demo-message"
+      name="message"
+      rows="4"
+      placeholder="Enter your message"
+    ></textarea>
+  </div>
+
+  <div class="form-field">
+    <label class="form-field__label" for="demo-topic">Topic</label>
+    <select class="form-field__control" id="demo-topic" name="topic">
+      <option value="">Choose a topic</option>
+      <option value="project">New project</option>
+      <option value="support">Support</option>
+    </select>
+  </div>
+
+  <div class="form-field">
+    <label class="form-field__label" for="demo-disabled">Disabled</label>
+    <input
+      class="form-field__control"
+      id="demo-disabled"
+      type="text"
+      value="Unavailable field"
+      disabled
+    >
+  </div>
+
+  <div class="form-field">
+    <label class="form-field__label" for="demo-readonly">Read only</label>
+    <input
+      class="form-field__control"
+      id="demo-readonly"
+      type="text"
+      value="You can select and copy this text"
+      readonly
+    >
+  </div>
+
+  <div class="form-field">
+    <label class="form-field__label" for="demo-invalid">Email with error</label>
+    <input
+      class="form-field__control"
+      id="demo-invalid"
+      type="email"
+      value="invalid-address"
+      aria-invalid="true"
+      aria-describedby="demo-invalid-error"
+    >
+    <p
+      class="form-field__hint form-field__hint--error"
+      id="demo-invalid-error"
+    >
+      Enter a valid email address.
+    </p>
+  </div>
+</section>
+
 <article>
   <header>
     <h2>A sample article</h2>
