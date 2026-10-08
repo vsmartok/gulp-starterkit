@@ -1,0 +1,87 @@
+@use "../abstracts/variables";
+
+.button {
+  --button-color: #{variables.$button-color};
+  --button-bg: #{variables.$button-bg};
+  --button-hover-bg: #{variables.$button-hover-bg};
+  --button-active-bg: #{variables.$button-active-bg};
+  --button-border-color: #{variables.$button-border-color};
+
+  --button-font-weight: #{variables.$button-font-weight};
+  --button-padding-y: #{variables.$button-padding-y};
+  --button-padding-x: #{variables.$button-padding-x};
+  --button-min-height: #{variables.$button-min-height};
+  --button-border-radius: #{variables.$button-border-radius};
+
+  --button-gap: #{variables.$button-gap};
+  --button-icon-size: #{variables.$button-icon-size};
+  --button-focus-ring-color: #{variables.$button-focus-ring-color};
+  --button-disabled-opacity: #{variables.$button-disabled-opacity};
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--button-gap);
+
+  min-block-size: var(--button-min-height);
+  padding-block: var(--button-padding-y);
+  padding-inline: var(--button-padding-x);
+
+  border: 1px solid var(--button-border-color);
+  border-radius: var(--button-border-radius);
+
+  font: inherit;
+  font-weight: var(--button-font-weight);
+  text-align: center;
+  text-decoration: none;
+  vertical-align: middle;
+
+  color: var(--button-color);
+  background-color: var(--button-bg);
+
+  appearance: none;
+  cursor: pointer;
+
+  @media (hover: hover) {
+    &:not(:disabled):hover {
+      color: var(--button-hover-color, var(--button-color));
+      background-color: var(--button-hover-bg);
+      border-color: var(
+        --button-hover-border-color,
+        var(--button-border-color)
+      );
+    }
+  }
+
+  &:not(:disabled):active {
+    color: var(--button-active-color, var(--button-color));
+    background-color: var(--button-active-bg);
+    border-color: var(--button-active-border-color, var(--button-border-color));
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--button-focus-ring-color);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    opacity: var(--button-disabled-opacity);
+    cursor: not-allowed;
+  }
+}
+
+.button__icon {
+  display: block;
+  flex-shrink: 0;
+
+  inline-size: var(--button-icon-size);
+  block-size: var(--button-icon-size);
+}
+
+.button--icon {
+  --button-padding-x: 0;
+  --button-padding-y: 0;
+
+  inline-size: var(--button-min-height);
+  block-size: var(--button-min-height);
+}
