@@ -1,0 +1,59 @@
+@use "../abstracts/variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+
+  font-family: variables.$font-family-base;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$font-weight-base;
+  font-style: variables.$font-style-base;
+  line-height: variables.$line-height-base;
+
+  color: var(--body-color);
+  background-color: var(--body-bg);
+}
+
+a {
+  color: var(--link-color);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: variables.$headings-font-family;
+  font-style: variables.$headings-font-style;
+  font-weight: variables.$headings-font-weight;
+  line-height: variables.$headings-line-height;
+  color: variables.$headings-color;
+}
+
+h1 {
+  font-size: variables.$h1-font-size;
+}
+
+h2 {
+  font-size: variables.$h2-font-size;
+}
+
+h3 {
+  font-size: variables.$h3-font-size;
+}
+
+h4 {
+  font-size: variables.$h4-font-size;
+}
+
+h5 {
+  font-size: variables.$h5-font-size;
+}
+
+h6 {
+  font-size: variables.$h6-font-size;
+}

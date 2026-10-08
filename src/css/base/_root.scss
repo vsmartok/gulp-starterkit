@@ -1,0 +1,31 @@
+@use "../abstracts/variables";
+
+@mixin dark-theme {
+  color-scheme: dark;
+
+  --body-color: #{variables.$body-color-dark};
+  --body-bg: #{variables.$body-bg-dark};
+  --link-color: #{variables.$link-color-dark};
+  --content-border-color: #{variables.$content-border-color-dark};
+}
+
+:root {
+  color-scheme: light;
+
+  --body-color: #{variables.$body-color};
+  --body-bg: #{variables.$body-bg};
+  --link-color: #{variables.$link-color};
+  --content-border-color: #{variables.$content-border-color};
+}
+
+@if variables.$enable-dark-mode {
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme]) {
+      @include dark-theme;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    @include dark-theme;
+  }
+}

@@ -94,6 +94,76 @@ Output goes to `build/assets/css`, preserving relative paths.
 
 Browser targets are configured in `.browserslistrc`, currently using `defaults`.
 
+## Base styles and themes
+
+The starterkit includes a minimal reset, base typography, light and dark themes, a page layout, a container, and optional content styles.
+
+### Configuration
+
+Default values are defined in `src/css/abstracts/_variables.scss`. They use `!default` and can be configured at the beginning of `src/css/styles.scss`, before other module imports:
+
+```scss
+@use "abstracts/variables" with (
+  $font-family-base: (
+    Arial,
+    sans-serif,
+  ),
+  $font-size-base: 1rem,
+  $h1-font-size: 2.5rem,
+  $container-max-width: 80rem,
+  $container-padding-x: 1.5rem,
+  $enable-dark-mode: false
+);
+```
+
+The initial heading scale applies globally. Component classes can override heading sizes to match the design. Responsive adjustments are added per project.
+
+### Themes
+
+Theme colors are exposed as CSS custom properties by `src/css/base/_root.scss`.
+
+| HTML setting              | Behavior                               |
+| ------------------------- | -------------------------------------- |
+| No `data-theme` attribute | Follow the operating system preference |
+| `data-theme="light"`      | Use the light theme                    |
+| `data-theme="dark"`       | Use the dark theme                     |
+
+Set the attribute on `<html>`:
+
+```html
+<html lang="en" data-theme="light"></html>
+```
+
+With `$enable-dark-mode: false`, dark theme rules are excluded from the compiled CSS.
+
+A JavaScript theme switcher and persistence of the user's choice are not included.
+
+### Page layout and container
+
+The shared layout uses `.page` on `<body>` and `.page__main` on `<main>`. The main area grows to keep the footer at the viewport bottom on short pages. On longer pages, the footer follows the content.
+
+`.container` centers content and sets its maximum width and horizontal padding. The configured maximum width includes padding.
+
+For full-width section backgrounds, place containers inside individual sections.
+
+### Content styles
+
+Add `.content` to a text block to enable spacing between direct children, additional spacing before headings, list indentation, blockquote borders, and full-width tables with horizontal separators.
+
+These styles do not apply outside `.content`. Table overflow handling is left to the project.
+
+To exclude the component styles, remove this import from `src/css/styles.scss`:
+
+```scss
+@use "components/content";
+```
+
+## Playground
+
+Open `/playground.html` to inspect headings, text, lists, tables, forms, media, and native disclosure elements.
+
+The page is intended for manual checks of styles, keyboard focus, themes, and responsive behavior. It can be removed when starting a project.
+
 ## JavaScript
 
 Every `.js` file directly inside `src/js` is a separate entry point. There are no required entry filenames.

@@ -1,6 +1,9 @@
-@use "abstracts/variables";
+@use "base/reset";
+@use "base/root";
 @use "base/fonts";
+@use "base/base";
 
-body {
-  color: variables.$text-color;
-}
+@use "layout/page";
+@use "layout/container";
+
+@use "components/content";
