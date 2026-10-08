@@ -14,6 +14,8 @@
   --form-field-error-color: #{variables.$form-field-error-color-dark};
   --form-field-focus-ring-color: #{variables.$form-field-focus-ring-color-dark};
   --form-field-disabled-bg: #{variables.$form-field-disabled-bg-dark};
+
+  --form-check-accent-color: #{variables.$form-check-accent-color-dark};
 }
 
 :root {
@@ -30,6 +32,8 @@
   --form-field-error-color: #{variables.$form-field-error-color};
   --form-field-focus-ring-color: #{variables.$form-field-focus-ring-color};
   --form-field-disabled-bg: #{variables.$form-field-disabled-bg};
+
+  --form-check-accent-color: #{variables.$form-check-accent-color};
 }
 
 @if variables.$enable-dark-mode {
