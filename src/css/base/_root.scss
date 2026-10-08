@@ -6,7 +6,14 @@
   --body-color: #{variables.$body-color-dark};
   --body-bg: #{variables.$body-bg-dark};
   --link-color: #{variables.$link-color-dark};
+
   --content-border-color: #{variables.$content-border-color-dark};
+
+  --form-field-border-color: #{variables.$form-field-border-color-dark};
+  --form-field-hint-color: #{variables.$form-field-hint-color-dark};
+  --form-field-error-color: #{variables.$form-field-error-color-dark};
+  --form-field-focus-ring-color: #{variables.$form-field-focus-ring-color-dark};
+  --form-field-disabled-bg: #{variables.$form-field-disabled-bg-dark};
 }
 
 :root {
@@ -15,7 +22,14 @@
   --body-color: #{variables.$body-color};
   --body-bg: #{variables.$body-bg};
   --link-color: #{variables.$link-color};
+
   --content-border-color: #{variables.$content-border-color};
+
+  --form-field-border-color: #{variables.$form-field-border-color};
+  --form-field-hint-color: #{variables.$form-field-hint-color};
+  --form-field-error-color: #{variables.$form-field-error-color};
+  --form-field-focus-ring-color: #{variables.$form-field-focus-ring-color};
+  --form-field-disabled-bg: #{variables.$form-field-disabled-bg};
 }
 
 @if variables.$enable-dark-mode {

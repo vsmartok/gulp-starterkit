@@ -1,0 +1,66 @@
+@use "../abstracts/variables";
+
+.form-field {
+  --form-field-gap: #{variables.$form-field-gap};
+  --form-field-label-font-weight: #{variables.$form-field-label-font-weight};
+  --form-field-hint-font-size: #{variables.$form-field-hint-font-size};
+  --form-field-padding-y: #{variables.$form-field-padding-y};
+  --form-field-padding-x: #{variables.$form-field-padding-x};
+  --form-field-min-height: #{variables.$form-field-min-height};
+  --form-field-border-radius: #{variables.$form-field-border-radius};
+  --form-field-textarea-min-height: #{variables.$form-field-textarea-min-height};
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: var(--form-field-gap);
+}
+
+.form-field__label {
+  font-weight: var(--form-field-label-font-weight);
+}
+
+.form-field__control {
+  inline-size: 100%;
+  min-inline-size: 0;
+  min-block-size: var(--form-field-min-height);
+  padding-block: var(--form-field-padding-y);
+  padding-inline: var(--form-field-padding-x);
+
+  border: 1px solid var(--form-field-border-color);
+  border-radius: var(--form-field-border-radius);
+
+  color: var(--body-color);
+  background-color: var(--body-bg);
+
+  &::placeholder {
+    color: var(--form-field-hint-color);
+    opacity: 1;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--form-field-focus-ring-color);
+    outline-offset: 2px;
+  }
+
+  &[aria-invalid="true"] {
+    border-color: var(--form-field-error-color);
+  }
+
+  &:disabled {
+    background-color: var(--form-field-disabled-bg);
+    cursor: not-allowed;
+  }
+}
+
+textarea.form-field__control {
+  min-block-size: var(--form-field-textarea-min-height);
+}
+
+.form-field__hint {
+  font-size: var(--form-field-hint-font-size);
+  color: var(--form-field-hint-color);
+}
+
+.form-field__hint--error {
+  color: var(--form-field-error-color);
+}
