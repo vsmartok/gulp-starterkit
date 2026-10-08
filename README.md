@@ -158,6 +158,55 @@ To exclude the component styles, remove this import from `src/css/styles.scss`:
 @use "components/content";
 ```
 
+## Buttons
+
+Import `components/buttons` in `src/css/styles.scss` to include the button component. Remove the import if the project does not use it.
+
+Use `.button` on native buttons and navigation links:
+
+```html
+<button class="button" type="button">Save changes</button>
+<a class="button" href="/blog/">Open blog</a>
+```
+
+Defaults are configured through `$button-*` Sass variables. The component exposes local `--button-*` CSS custom properties for project-specific variants.
+
+Declare modifiers after the base component:
+
+```scss
+.button--secondary {
+  --button-color: #222;
+  --button-bg: #edf2f7;
+  --button-hover-bg: #dce5ef;
+  --button-active-bg: #cbd8e6;
+  --button-border-color: #b8c5d3;
+}
+```
+
+Optional `--button-hover-color`, `--button-active-color`, `--button-hover-border-color`, and `--button-active-border-color` override the corresponding state colors. Otherwise, those states use the base text and border colors.
+
+The component includes hover, active, visible focus, and native disabled states. Hover styling applies to devices that support hovering.
+
+Use the `disabled` attribute on `<button>`. Links do not support native disabled behavior; CSS alone cannot prevent navigation.
+
+### Icons
+
+Use `.button__icon` on an SVG inside the button. Text and icons are aligned with a configurable gap.
+
+Add `.button--icon` for a square icon-only button and provide an accessible name:
+
+```html
+<button class="button button--icon" type="button" aria-label="Add item">
+  <svg class="button__icon" aria-hidden="true">
+    <use href="/assets/icons/sprite.svg#plus"></use>
+  </svg>
+</button>
+```
+
+The referenced icon must exist in the sprite. Decorative icons use `aria-hidden="true"` and should inherit the button color through `currentColor`.
+
+Examples of buttons, states, and inline icons are available on `/playground.html`.
+
 ## Playground
 
 Open `/playground.html` to inspect headings, text, lists, tables, forms, media, and native disclosure elements.

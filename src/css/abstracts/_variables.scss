@@ -47,3 +47,22 @@ $content-table-cell-padding: 0.75rem !default;
 // Container
 $container-max-width: 75rem !default;
 $container-padding-x: 1rem !default;
+
+// Button
+$button-color: #fff !default;
+$button-bg: #005fcc !default;
+$button-hover-bg: #004ca3 !default;
+$button-active-bg: #003b80 !default;
+$button-border-color: transparent !default;
+
+$button-font-weight: 600 !default;
+$button-padding-y: 0.625rem !default;
+$button-padding-x: 1rem !default;
+$button-min-height: 2.75rem !default;
+$button-border-radius: 0.25rem !default;
+
+$button-gap: 0.5rem !default;
+$button-icon-size: 1.25rem !default;
+
+$button-focus-ring-color: #005fcc !default;
+$button-disabled-opacity: 0.5 !default;
