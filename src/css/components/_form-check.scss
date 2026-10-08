@@ -1,0 +1,38 @@
+@use "../abstracts/variables";
+
+.form-check {
+  --form-check-size: #{variables.$form-check-size};
+  --form-check-gap: #{variables.$form-check-gap};
+  --form-check-disabled-opacity: #{variables.$form-check-disabled-opacity};
+
+  display: grid;
+  grid-template-columns: var(--form-check-size) minmax(0, 1fr);
+  align-items: start;
+  gap: var(--form-check-gap);
+
+  cursor: pointer;
+}
+
+.form-check__control {
+  inline-size: var(--form-check-size);
+  block-size: var(--form-check-size);
+  margin: 0;
+  margin-block-start: 0.2em;
+
+  accent-color: var(--form-check-accent-color);
+  cursor: inherit;
+
+  &:focus-visible {
+    outline: 2px solid var(--form-field-focus-ring-color);
+    outline-offset: 2px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+
+  &:disabled + .form-check__label {
+    opacity: var(--form-check-disabled-opacity);
+    cursor: not-allowed;
+  }
+}
