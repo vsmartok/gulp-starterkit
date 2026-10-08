@@ -367,6 +367,91 @@ console.log(greet("Starterkit"));</code></pre>
   </div>
 </section>
 
+<section aria-labelledby="form-checks-title">
+  <h2 id="form-checks-title">Checkboxes and radio buttons</h2>
+
+  <h3>Checkboxes</h3>
+
+  <label class="form-check">
+    <input
+      class="form-check__control"
+      type="checkbox"
+      name="demo-newsletter"
+      value="yes"
+    >
+    <span class="form-check__label">Subscribe to the newsletter</span>
+  </label>
+
+  <label class="form-check">
+    <input
+      class="form-check__control"
+      type="checkbox"
+      name="demo-updates"
+      value="yes"
+      checked
+    >
+    <span class="form-check__label">
+      Receive project updates and announcements. This longer label
+      demonstrates how text wraps on a narrow screen.
+    </span>
+  </label>
+
+  <label class="form-check">
+    <input
+      class="form-check__control"
+      type="checkbox"
+      disabled
+    >
+    <span class="form-check__label">Disabled checkbox</span>
+  </label>
+
+  <label class="form-check">
+    <input
+      class="form-check__control"
+      type="checkbox"
+      checked
+      disabled
+    >
+    <span class="form-check__label">Checked disabled checkbox</span>
+  </label>
+
+  <fieldset>
+    <legend>Preferred contact method</legend>
+
+    <label class="form-check">
+      <input
+        class="form-check__control"
+        type="radio"
+        name="demo-contact-method"
+        value="email"
+        checked
+      >
+      <span class="form-check__label">Email</span>
+    </label>
+
+    <label class="form-check">
+      <input
+        class="form-check__control"
+        type="radio"
+        name="demo-contact-method"
+        value="phone"
+      >
+      <span class="form-check__label">Phone</span>
+    </label>
+
+    <label class="form-check">
+      <input
+        class="form-check__control"
+        type="radio"
+        name="demo-contact-method"
+        value="post"
+        disabled
+      >
+      <span class="form-check__label">Post — unavailable</span>
+    </label>
+  </fieldset>
+</section>
+
 <article>
   <header>
     <h2>A sample article</h2>
