@@ -207,6 +207,39 @@ The referenced icon must exist in the sprite. Decorative icons use `aria-hidden=
 
 Examples of buttons, states, and inline icons are available on `/playground.html`.
 
+## Form fields
+
+Import `components/form` in `src/css/styles.scss` to include the component. Remove the import if the project does not use it.
+
+Use `.form-field` as a wrapper, `.form-field__label` for the label, `.form-field__control` for a text input, textarea, or native select, and `.form-field__hint` for supporting text.
+
+```html
+<div class="form-field">
+  <label class="form-field__label" for="contact-email">Email</label>
+  <input
+    class="form-field__control"
+    id="contact-email"
+    name="email"
+    type="email"
+    autocomplete="email"
+    aria-describedby="contact-email-hint"
+  />
+  <p class="form-field__hint" id="contact-email-hint">
+    We will use this address to reply.
+  </p>
+</div>
+```
+
+Configure defaults through `$form-field-*` Sass variables. Local `--form-field-*` CSS custom properties on `.form-field` allow individual fields to override dimensions and spacing. Colors follow the light and dark theme settings.
+
+The component includes visible focus, native disabled styling, and an error border when `aria-invalid="true"` is present. Read-only inputs retain their regular appearance and allow text selection and copying.
+
+For errors, add `.form-field__hint--error` to the message and connect it to the control through `aria-describedby`. Set `aria-invalid="true"` on the control. Validation logic must manage these attributes; the component provides styles only.
+
+Selects retain their native arrow and behavior. Textareas can be resized vertically. Spacing between fields belongs to the project’s form layout.
+
+Examples are available on `/playground.html`.
+
 ## Playground
 
 Open `/playground.html` to inspect headings, text, lists, tables, forms, media, and native disclosure elements.
