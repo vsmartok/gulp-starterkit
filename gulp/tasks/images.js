@@ -6,14 +6,17 @@ import { checkImageNames } from "../check-image-names.js";
 import { createWebp } from "../create-webp.js";
 import { optimizeSvg } from "../optimize-svg.js";
 import { optimizeRaster } from "../optimize-raster.js";
+import { getExistingSourceGroups } from "../existing-source-groups.js";
 
 async function buildImages() {
-  for (const group of paths.images) {
+  const groups = await getExistingSourceGroups(paths.images);
+
+  for (const group of groups) {
     await checkImageNames(group);
   }
 
   await Promise.all(
-    paths.images.map((group) =>
+    groups.map((group) =>
       pipeline(
         gulp.src(group.src, {
           base: group.base,
