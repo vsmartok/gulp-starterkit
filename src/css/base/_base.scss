@@ -1,0 +1,22 @@
+@use "../abstracts/variables";
+
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+
+  font-family: variables.$font-family-base;
+  font-size: variables.$font-size-base;
+  font-weight: variables.$font-weight-base;
+  font-style: variables.$font-style-base;
+  line-height: variables.$line-height-base;
+
+  color: var(--body-color);
+  background-color: var(--body-bg);
+}
+
+a {
+  color: var(--link-color);
+}
