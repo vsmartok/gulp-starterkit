@@ -1,3 +1,9 @@
 @use "abstracts/variables";
 @use "base/reset";
+@use "base/root";
 @use "base/fonts";
+
+body {
+  color: var(--body-color);
+  background-color: var(--body-bg);
+}

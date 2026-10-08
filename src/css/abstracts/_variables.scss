@@ -1,1 +1,19 @@
-$text-color: #222;
+// Features
+$enable-dark-mode: true !default;
+
+// Typography
+$font-family-base: system-ui, sans-serif !default;
+$font-size-base: 1rem !default;
+$font-weight-base: 400 !default;
+$font-style-base: normal !default;
+$line-height-base: 1.5 !default;
+
+// Light theme
+$body-color: #222 !default;
+$body-bg: #fff !default;
+$link-color: #005fcc !default;
+
+// Dark theme
+$body-color-dark: #eee !default;
+$body-bg-dark: #181818 !default;
+$link-color-dark: #8ab4ff !default;
