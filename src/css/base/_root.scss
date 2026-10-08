@@ -6,6 +6,7 @@
   --body-color: #{variables.$body-color-dark};
   --body-bg: #{variables.$body-bg-dark};
   --link-color: #{variables.$link-color-dark};
+  --content-border-color: #{variables.$content-border-color-dark};
 }
 
 :root {
@@ -14,6 +15,7 @@
   --body-color: #{variables.$body-color};
   --body-bg: #{variables.$body-bg};
   --link-color: #{variables.$link-color};
+  --content-border-color: #{variables.$content-border-color};
 }
 
 @if variables.$enable-dark-mode {
