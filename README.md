@@ -240,6 +240,34 @@ Selects retain their native arrow and behavior. Textareas can be resized vertica
 
 Examples are available on `/playground.html`.
 
+## Checkboxes and radio buttons
+
+Import `components/form-check` in `src/css/styles.scss` to include the component. Remove the import if the project does not use it.
+
+Use a wrapping label with `.form-check`, a native checkbox or radio with `.form-check__control`, and an adjacent `.form-check__label` for the text:
+
+```html
+<label class="form-check">
+  <input
+    class="form-check__control"
+    type="checkbox"
+    name="newsletter"
+    value="yes"
+  />
+  <span class="form-check__label">Subscribe to the newsletter</span>
+</label>
+```
+
+The entire label is clickable. Long text wraps beside the control.
+
+Configure size, gap, and disabled label opacity through `$form-check-*` Sass variables or local `--form-check-*` CSS custom properties. The accent color follows the light and dark theme settings. Focus uses the shared form field focus ring color.
+
+Controls retain their native appearance and keyboard behavior. Use `checked` for an initially selected control and `disabled` to make it unavailable.
+
+Radio buttons in the same group must share a `name`. Use `fieldset` and `legend` to give related controls a group label. Group layout and validation messages belong to the project.
+
+Examples are available on `/playground.html`.
+
 ## Playground
 
 Open `/playground.html` to inspect headings, text, lists, tables, forms, media, and native disclosure elements.
