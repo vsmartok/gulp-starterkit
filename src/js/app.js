@@ -1,3 +1,3 @@
-import { greeting } from "./modules/greeting.js";
+import { initAccordions } from "./modules/accordion.js";
 
-console.log(greeting("Starterkit"));
+initAccordions();

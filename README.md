@@ -268,6 +268,68 @@ Radio buttons in the same group must share a `name`. Use `fieldset` and `legend`
 
 Examples are available on `/playground.html`.
 
+## Accordion
+
+Import `components/accordion` in `src/css/styles.scss` and initialize the JavaScript module in the page entry:
+
+```js
+import { initAccordions } from "./modules/accordion.js";
+
+initAccordions();
+```
+
+Call initialization after the markup is available. The default layout loads scripts with `defer`. Repeated calls skip already initialized accordions.
+
+Use `data-accordion="single"` to allow at most one expanded panel, or `data-accordion="multiple"` for independent panels. Both modes allow all panels to be closed.
+
+```html
+<div class="accordion" data-accordion="single">
+  <div class="accordion__item">
+    <h3 class="accordion__heading">
+      <button
+        class="accordion__trigger"
+        type="button"
+        aria-expanded="false"
+        aria-controls="faq-panel-1"
+      >
+        <span>How does it work?</span>
+        <span class="accordion__icon" aria-hidden="true"></span>
+      </button>
+    </h3>
+
+    <div class="accordion__panel" id="faq-panel-1" hidden>
+      <div class="accordion__content content">
+        <p>The button expands or collapses this panel.</p>
+      </div>
+    </div>
+  </div>
+</div>
+```
+
+Choose heading levels according to the page structure. Panel IDs must be unique and match the corresponding button’s `aria-controls`.
+
+Set `aria-expanded="true"` and omit `hidden` for initially open panels. For initially closed panels, use `aria-expanded="false"` and `hidden`. Initialization uses `aria-expanded` as the source of truth. In single mode, only the first initially expanded panel remains open.
+
+Configure appearance through `$accordion-*` Sass variables or local `--accordion-*` CSS custom properties. Duration is a unitless number in milliseconds:
+
+```scss
+.accordion--faq {
+  --accordion-duration: 300;
+  --accordion-easing: ease-in-out;
+  --accordion-padding-x: 1.5rem;
+}
+```
+
+Declare project modifiers after the base component. Colors follow the current theme by default.
+
+Panel height animates between its current and target size. Repeated clicks interrupt the current animation. Expanded panels return to their natural height after animation. Keep panel padding on `.accordion__content`.
+
+Closing panels become inert immediately and receive `hidden` after animation. If focus is inside a panel being closed, it returns to the controlling button. Native buttons support Enter and Space activation.
+
+Panel and indicator animations are disabled when `prefers-reduced-motion: reduce` is active at the time of interaction.
+
+The component requires JavaScript for interaction. Examples of both modes are available on `/playground.html`.
+
 ## Playground
 
 Open `/playground.html` to inspect headings, text, lists, tables, forms, media, and native disclosure elements.

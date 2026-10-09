@@ -1,0 +1,104 @@
+@use "../abstracts/variables";
+
+.accordion {
+  --accordion-color: var(--body-color);
+  --accordion-bg: var(--body-bg);
+  --accordion-border-color: var(--content-border-color);
+  --accordion-focus-ring-color: var(--link-color);
+
+  --accordion-padding-x: #{variables.$accordion-padding-x};
+  --accordion-padding-y: #{variables.$accordion-padding-y};
+  --accordion-trigger-gap: #{variables.$accordion-trigger-gap};
+  --accordion-trigger-font-size: #{variables.$accordion-trigger-font-size};
+  --accordion-trigger-font-weight: #{variables.$accordion-trigger-font-weight};
+
+  --accordion-icon-size: #{variables.$accordion-icon-size};
+  --accordion-icon-thickness: #{variables.$accordion-icon-thickness};
+  --accordion-duration: #{variables.$accordion-duration};
+  --accordion-easing: #{variables.$accordion-easing};
+
+  color: var(--accordion-color);
+  background-color: var(--accordion-bg);
+}
+
+.accordion__item {
+  border-block-end: 1px solid var(--accordion-border-color);
+
+  &:first-child {
+    border-block-start: 1px solid var(--accordion-border-color);
+  }
+}
+
+.accordion__heading {
+  margin: 0;
+}
+
+.accordion__trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--accordion-trigger-gap);
+
+  inline-size: 100%;
+  padding-block: var(--accordion-padding-y);
+  padding-inline: var(--accordion-padding-x);
+
+  border: 0;
+  border-radius: 0;
+
+  font: inherit;
+  font-size: var(--accordion-trigger-font-size);
+  font-weight: var(--accordion-trigger-font-weight);
+  line-height: variables.$line-height-base;
+  text-align: start;
+
+  color: inherit;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--accordion-focus-ring-color);
+    outline-offset: -2px;
+  }
+}
+
+.accordion__icon {
+  position: relative;
+  flex-shrink: 0;
+  inline-size: var(--accordion-icon-size);
+  block-size: var(--accordion-icon-size);
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    inline-size: 100%;
+    block-size: var(--accordion-icon-thickness);
+    background-color: currentColor;
+  }
+
+  &::after {
+    transform: rotate(90deg);
+    transition: transform calc(var(--accordion-duration) * 1ms)
+      var(--accordion-easing);
+  }
+}
+
+.accordion__trigger[aria-expanded="true"] .accordion__icon::after {
+  transform: rotate(0deg);
+}
+
+.accordion__content {
+  display: flow-root;
+  padding-inline: var(--accordion-padding-x);
+  padding-block-end: var(--accordion-padding-y);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .accordion__icon::after {
+    transition: none;
+  }
+}

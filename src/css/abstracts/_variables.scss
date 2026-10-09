@@ -99,3 +99,18 @@ $form-check-disabled-opacity: 0.5 !default;
 
 $form-check-accent-color: #005fcc !default;
 $form-check-accent-color-dark: #8ab4ff !default;
+
+// Accordion
+$accordion-padding-x: 1rem !default;
+$accordion-padding-y: 1rem !default;
+$accordion-trigger-gap: 1rem !default;
+
+$accordion-trigger-font-size: 1rem !default;
+$accordion-trigger-font-weight: 600 !default;
+
+$accordion-icon-size: 1rem !default;
+$accordion-icon-thickness: 2px !default;
+
+// Animation duration in milliseconds
+$accordion-duration: 250 !default;
+$accordion-easing: ease !default;
