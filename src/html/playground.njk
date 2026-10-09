@@ -452,6 +452,125 @@ console.log(greet("Starterkit"));</code></pre>
   </fieldset>
 </section>
 
+<section aria-labelledby="accordions-title">
+  <h2 id="accordions-title">Accordions</h2>
+
+  <h3>Single panel mode</h3>
+
+  <div class="accordion" data-accordion="single">
+    <div class="accordion__item">
+      <h4 class="accordion__heading">
+        <button
+          class="accordion__trigger"
+          type="button"
+          aria-expanded="true"
+          aria-controls="demo-single-panel-1"
+        >
+          <span>Initially open panel</span>
+          <span class="accordion__icon" aria-hidden="true"></span>
+        </button>
+      </h4>
+
+      <div class="accordion__panel" id="demo-single-panel-1">
+        <div class="accordion__content content">
+          <p>This panel starts open. Opening the next panel closes this one.</p>
+          <p><a href="/blog/">A focusable link inside the panel</a></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <h4 class="accordion__heading">
+        <button
+          class="accordion__trigger"
+          type="button"
+          aria-expanded="false"
+          aria-controls="demo-single-panel-2"
+        >
+          <span>Another panel with a longer heading to test wrapping</span>
+          <span class="accordion__icon" aria-hidden="true"></span>
+        </button>
+      </h4>
+
+      <div class="accordion__panel" id="demo-single-panel-2" hidden>
+        <div class="accordion__content content">
+          <p>This panel starts closed.</p>
+          <p>
+            Resize the window after opening it. The panel should adapt
+            to its content without keeping a fixed height.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <h3>Multiple panel mode</h3>
+
+  <div class="accordion" data-accordion="multiple">
+    <div class="accordion__item">
+      <h4 class="accordion__heading">
+        <button
+          class="accordion__trigger"
+          type="button"
+          aria-expanded="true"
+          aria-controls="demo-multiple-panel-1"
+        >
+          <span>First independent panel</span>
+          <span class="accordion__icon" aria-hidden="true"></span>
+        </button>
+      </h4>
+
+      <div class="accordion__panel" id="demo-multiple-panel-1">
+        <div class="accordion__content content">
+          <p>All panels in this accordion start open.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <h4 class="accordion__heading">
+        <button
+          class="accordion__trigger"
+          type="button"
+          aria-expanded="true"
+          aria-controls="demo-multiple-panel-2"
+        >
+          <span>Second independent panel</span>
+          <span class="accordion__icon" aria-hidden="true"></span>
+        </button>
+      </h4>
+
+      <div class="accordion__panel" id="demo-multiple-panel-2">
+        <div class="accordion__content content">
+          <p>Closing this panel leaves the first panel open.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion__item">
+      <h4 class="accordion__heading">
+        <button
+          class="accordion__trigger"
+          type="button"
+          aria-expanded="true"
+          aria-controls="demo-multiple-panel-3"
+        >
+          <span>Third independent panel</span>
+          <span class="accordion__icon" aria-hidden="true"></span>
+        </button>
+      </h4>
+
+      <div class="accordion__panel" id="demo-multiple-panel-3">
+        <div class="accordion__content content">
+          <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptates maiores, eligendi ipsa consectetur excepturi cumque numquam aut reiciendis.</p>
+          <p>Alias voluptatem rerum fugit? Explicabo, minus repellat modi et quidem natus hic vero iure incidunt quasi voluptates eaque quas qui!</p>
+          <p>Ex, odio doloribus sapiente sunt nam necessitatibus excepturi alias iusto rem ut, optio nulla tempore voluptas sint natus fugiat dolores.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <article>
   <header>
     <h2>A sample article</h2>
