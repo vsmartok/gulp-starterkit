@@ -571,6 +571,116 @@ console.log(greet("Starterkit"));</code></pre>
   </div>
 </section>
 
+<section aria-labelledby="modals-title">
+  <h2 id="modals-title">Modal dialogs</h2>
+
+  <button class="button" type="button" data-modal-open="demo-modal">
+    Open dialog
+  </button>
+
+  <dialog
+    class="modal"
+    id="demo-modal"
+    aria-labelledby="demo-modal-title"
+  >
+    <div class="modal__window">
+      <header class="modal__header">
+        <h2 class="modal__title" id="demo-modal-title">Example dialog</h2>
+
+        <button
+          class="modal__close"
+          type="button"
+          data-modal-close
+          aria-label="Close dialog"
+          autofocus
+        >
+          <svg
+            class="modal__close-icon"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </button>
+      </header>
+
+      <div class="modal__content content">
+        <button
+          class="button"
+          type="button"
+          data-modal-open="demo-second-modal"
+        >
+          Open second dialog
+        </button>
+        <p>This dialog demonstrates layout, animation, and keyboard interaction.</p>
+        <p>
+          Its header stays visible while long content scrolls inside the window.
+        </p>
+        <p><a href="/blog/">Open the blog</a></p>
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae veniam suscipit vel, nostrum id laboriosam. Doloribus voluptatem autem ullam voluptas praesentium mollitia, reiciendis modi! Vitae ullam tenetur mollitia explicabo dicta.</p>
+        <p>Quaerat culpa placeat aliquam, necessitatibus sapiente in ratione, nam quam voluptatem soluta error blanditiis ea consequuntur unde fuga ipsam, accusantium recusandae quo aspernatur temporibus ex magni animi commodi. Ex, consectetur.</p>
+        <p>Dolore excepturi deleniti debitis ex voluptatem molestias architecto. Optio molestias accusantium, velit voluptatum amet ex consequuntur autem, nulla cum, nobis vero voluptatem nesciunt nemo provident tenetur modi doloremque neque laudantium.</p>
+        <p>Possimus vel beatae, sequi ipsam dicta voluptatibus nam facere consequuntur rerum maxime odit eveniet amet, nihil accusantium natus ea dolor est similique deleniti nulla distinctio omnis unde reiciendis! Et, sed.</p>
+        <p>Quasi possimus delectus labore cumque, incidunt veniam non nobis quia magnam ratione dolorem consectetur eius assumenda illo rerum facere culpa odio quod tenetur corporis deserunt voluptate numquam quam unde. Porro!</p>
+        <p>Sequi, laborum! Inventore sit praesentium, minima pariatur officia beatae in laudantium quis placeat itaque perspiciatis hic ipsa repudiandae fuga expedita fugiat maiores sapiente incidunt possimus, alias error. Ipsam, quaerat aliquam.</p>
+        <p>Consectetur, neque ad voluptatibus repudiandae tempora numquam. Pariatur, hic voluptates! Esse mollitia beatae nisi iste minus porro hic iure, ipsam ipsum! Eum sed officiis saepe maiores repellendus doloremque quas suscipit?</p>
+        <p>Error quisquam temporibus natus exercitationem nihil! Tenetur, dicta, veritatis perferendis fuga eveniet qui est nesciunt voluptatibus molestias quibusdam ea amet laborum. Quod architecto neque tenetur repellendus consequatur ab? Accusamus, voluptatibus.</p>
+        <p>Ipsa at alias officia eveniet, cumque laudantium voluptates reiciendis, tenetur ex voluptate culpa magnam nesciunt velit sint animi eius, quasi ducimus? Minus, eos numquam. Fugiat dolorum corporis numquam odio rem!</p>
+        <p>Voluptatibus quisquam eos labore distinctio molestiae architecto? Dolore debitis amet sunt quas dicta ea! Totam recusandae vitae ea neque veniam pariatur quia omnis ex ratione, autem, corrupti quisquam doloribus? Ducimus.</p>
+
+        <button class="button" type="button" data-modal-close>
+          Close dialog
+        </button>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog
+    class="modal"
+    id="demo-second-modal"
+    aria-labelledby="demo-second-modal-title"
+  >
+    <div class="modal__window">
+      <header class="modal__header">
+        <h2 class="modal__title" id="demo-second-modal-title">Second dialog</h2>
+
+        <button
+          class="modal__close"
+          type="button"
+          data-modal-close
+          aria-label="Close dialog"
+          autofocus
+        >
+          <svg
+            class="modal__close-icon"
+            viewBox="0 0 24 24"
+            width="24"
+            height="24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M18 6 6 18"></path>
+          </svg>
+        </button>
+      </header>
+
+      <div class="modal__content content">
+        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae veniam suscipit vel, nostrum id laboriosam. Doloribus voluptatem autem ullam voluptas praesentium mollitia, reiciendis modi! Vitae ullam tenetur mollitia explicabo dicta.</p>
+        <button class="button" type="button" data-modal-close>
+          Close dialog
+        </button>
+      </div>
+    </div>
+  </dialog>
+</section>
+
 <article>
   <header>
     <h2>A sample article</h2>

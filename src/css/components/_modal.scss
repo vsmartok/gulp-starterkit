@@ -1,0 +1,125 @@
+@use "../abstracts/variables";
+
+.modal {
+  --modal-color: var(--body-color);
+  --modal-bg: var(--body-bg);
+  --modal-border-color: var(--content-border-color);
+  --modal-focus-ring-color: var(--link-color);
+
+  --modal-max-width: #{variables.$modal-max-width};
+  --modal-viewport-padding: #{variables.$modal-viewport-padding};
+  --modal-padding: #{variables.$modal-padding};
+  --modal-header-gap: #{variables.$modal-header-gap};
+  --modal-border-radius: #{variables.$modal-border-radius};
+
+  --modal-title-font-size: #{variables.$modal-title-font-size};
+  --modal-title-font-weight: #{variables.$modal-title-font-weight};
+  --modal-close-size: #{variables.$modal-close-size};
+  --modal-close-icon-size: #{variables.$modal-close-icon-size};
+
+  --modal-backdrop-color: #{variables.$modal-backdrop-color};
+  --modal-duration: #{variables.$modal-duration};
+  --modal-easing: #{variables.$modal-easing};
+  --modal-offset: #{variables.$modal-offset};
+
+  position: fixed;
+  inset: 0;
+
+  inline-size: 100%;
+  block-size: 100vh;
+  block-size: 100dvh;
+  max-inline-size: none;
+  max-block-size: none;
+  margin: 0;
+  padding: var(--modal-viewport-padding);
+
+  border: 0;
+  overflow: hidden;
+
+  font: inherit;
+  color: var(--modal-color);
+  background-color: var(--modal-backdrop-color);
+
+  &[open] {
+    display: grid;
+    place-items: center;
+  }
+
+  &::backdrop {
+    background-color: transparent;
+  }
+}
+
+.modal__window {
+  display: flex;
+  flex-direction: column;
+
+  inline-size: 100%;
+  max-inline-size: var(--modal-max-width);
+  max-block-size: 100%;
+  min-block-size: 0;
+
+  border: 1px solid var(--modal-border-color);
+  border-radius: var(--modal-border-radius);
+  overflow: hidden;
+
+  background-color: var(--modal-bg);
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--modal-header-gap);
+  flex-shrink: 0;
+
+  padding: var(--modal-padding);
+}
+
+.modal__title {
+  margin: 0;
+
+  font: inherit;
+  font-size: var(--modal-title-font-size);
+  font-weight: var(--modal-title-font-weight);
+  line-height: variables.$headings-line-height;
+  color: inherit;
+}
+
+.modal__close {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+
+  inline-size: var(--modal-close-size);
+  block-size: var(--modal-close-size);
+  padding: 0;
+
+  border: 0;
+  border-radius: 0;
+
+  color: inherit;
+  background-color: transparent;
+  appearance: none;
+  cursor: pointer;
+
+  &:focus-visible {
+    outline: 2px solid var(--modal-focus-ring-color);
+    outline-offset: -2px;
+  }
+}
+
+.modal__close-icon {
+  display: block;
+  inline-size: var(--modal-close-icon-size);
+  block-size: var(--modal-close-icon-size);
+}
+
+.modal__content {
+  min-block-size: 0;
+  padding: var(--modal-padding);
+  padding-block-start: 0;
+
+  overflow: auto;
+  overscroll-behavior: contain;
+}

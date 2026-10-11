@@ -114,3 +114,23 @@ $accordion-icon-thickness: 2px !default;
 // Animation duration in milliseconds
 $accordion-duration: 250 !default;
 $accordion-easing: ease !default;
+
+// Modal
+$modal-max-width: 32rem !default;
+$modal-viewport-padding: 1rem !default;
+$modal-padding: 1.5rem !default;
+$modal-header-gap: 1rem !default;
+$modal-border-radius: 0.5rem !default;
+
+$modal-title-font-size: 1.5rem !default;
+$modal-title-font-weight: 600 !default;
+
+$modal-close-size: 2.75rem !default;
+$modal-close-icon-size: 1.25rem !default;
+
+$modal-backdrop-color: rgb(0 0 0 / 60%) !default;
+
+// Animation duration in milliseconds
+$modal-duration: 250 !default;
+$modal-easing: ease !default;
+$modal-offset: 1rem !default;
