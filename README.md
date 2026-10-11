@@ -330,6 +330,80 @@ Panel and indicator animations are disabled when `prefers-reduced-motion: reduce
 
 The component requires JavaScript for interaction. Examples of both modes are available on `/playground.html`.
 
+## Modal dialogs
+
+Import `components/modal` in `src/css/styles.scss` and initialize the JavaScript module in the page entry:
+
+```js
+import { initModals } from "./modules/modals.js";
+
+initModals();
+```
+
+Call initialization after the markup is available. The default layout loads scripts with `defer`. Initialization runs once and registers dialog handlers for the existing markup.
+
+Use a native `<dialog>` with `.modal` and a direct `.modal__window` child:
+
+```html
+<button class="button" type="button" data-modal-open="contact-modal">
+  Contact us
+</button>
+
+<dialog class="modal" id="contact-modal" aria-labelledby="contact-modal-title">
+  <div class="modal__window">
+    <header class="modal__header">
+      <h2 class="modal__title" id="contact-modal-title">Contact us</h2>
+
+      <button
+        class="modal__close"
+        type="button"
+        data-modal-close
+        aria-label="Close dialog"
+        autofocus
+      >
+        Close
+      </button>
+    </header>
+
+    <div class="modal__content content">
+      <p>Your content or form goes here.</p>
+    </div>
+  </div>
+</dialog>
+```
+
+Dialog and title IDs must be unique. The `data-modal-open` value is the dialog ID without `#`. Omit the `open` attribute: the module opens dialogs using `showModal()`.
+
+Use `data-modal-close` on buttons inside the dialog. Escape and backdrop clicks also close the active dialog. Backdrop dismissal requires the pointer press and release to occur on the backdrop, preventing dismissal when dragging from the window onto the backdrop.
+
+To disable backdrop dismissal for a specific dialog, add:
+
+```html
+data-modal-close-on-backdrop="false"
+```
+
+Choose the initial focus target using `autofocus` on an appropriate element inside the dialog. The dialog receives its accessible name through `aria-labelledby`.
+
+Configure dimensions, spacing, and animation through `$modal-*` Sass variables or local `--modal-*` CSS custom properties. Duration is a unitless number in milliseconds:
+
+```scss
+.modal--contact {
+  --modal-max-width: 40rem;
+  --modal-duration: 300;
+  --modal-easing: ease-in-out;
+}
+```
+
+Declare project modifiers after the base component. Window colors follow the current theme. The full-screen `.modal` layer draws the backdrop; the native `::backdrop` is transparent.
+
+The header remains visible while long content scrolls inside `.modal__content`. Background page scrolling is locked until closing finishes, with the page position restored afterward.
+
+Only one dialog is open at a time. Opening another waits for the current dialog to close and keeps the page locked during the switch. Closing the final dialog returns focus to the original opening button if it still exists.
+
+The backdrop and window animate on opening and closing. Closing during the opening animation starts from the current visual state. Repeated close requests share the existing closing operation. Animations are skipped when `prefers-reduced-motion: reduce` is active at the time of interaction.
+
+Examples of long content and switching between dialogs are available on `/playground.html`.
+
 ## Playground
 
 Open `/playground.html` to inspect headings, text, lists, tables, forms, media, and native disclosure elements.
